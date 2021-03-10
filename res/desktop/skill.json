@@ -1,0 +1,24 @@
+{
+  "name": "Cult Cinema Classics Skill",
+  "skillname": "skill-ccc",
+  "authorname": "JarbasSkills",
+  "foldername": "",
+  "url": "https://github.com/JarbasSkills/skill-ccc",
+  "branch": "v0.1",
+  "desktopFile": false,
+  "warning": "",
+  "systemDeps": false,
+  "platforms": [
+    "arm",
+    "arm64",
+    "i386",
+    "x86_64",
+    "ia64"
+  ],
+  "examples": [
+    "open cult movie classics menu",
+    "play zontar the thing from venus movie",
+    "play cult movie classics",
+    "play invasion of the saucer men"
+  ]
+}
