@@ -1,21 +1,17 @@
-from ovos_utils.waiting_for_mycroft.common_play import CPSMatchType, CPSMatchLevel
-from ovos_utils.skills.templates.media_collection import MediaCollectionSkill
+from ovos_utils.skills.templates.video_collection import VideoCollectionSkill
 from mycroft.skills.core import intent_file_handler
-from mycroft.util.parse import fuzzy_match, match_one
 from pyvod import Collection, Media
-from os.path import join, dirname
-import random
-import re
-from json_database import JsonStorageXDG
-import datetime
+from os.path import join, dirname, basename
+from ovos_utils.playback import CPSMatchType, CPSPlayback, CPSMatchConfidence
 
 
-class CultCinemaClassicsSkill(MediaCollectionSkill):
+class CultCinemaClassicsSkill(VideoCollectionSkill):
 
     def __init__(self):
         super().__init__("CultCinemaClassics")
         self.supported_media = [CPSMatchType.GENERIC,
                                 CPSMatchType.MOVIE,
+                                CPSMatchType.TRAILER,
                                 CPSMatchType.VIDEO]
         path = join(dirname(__file__), "res", "CultCinemaClassics.jsondb")
         logo = join(dirname(__file__), "res", "ccc_logo.png")
@@ -23,6 +19,10 @@ class CultCinemaClassicsSkill(MediaCollectionSkill):
         self.media_collection = Collection("CultCinemaClassics",
                                            logo=logo,
                                            db_path=path)
+        self.default_image = join(dirname(__file__), "ui", "ccc_logo.png")
+        self.skill_logo = join(dirname(__file__), "ui", "ccc_icon.jpg")
+        self.skill_icon = join(dirname(__file__), "ui", "ccc_icon.jpg")
+        self.default_bg = join(dirname(__file__), "ui", "ccc_logo.png")
 
     # voice interaction
     def get_intro_message(self):
@@ -34,28 +34,16 @@ class CultCinemaClassicsSkill(MediaCollectionSkill):
 
     # matching
     def match_media_type(self, phrase, media_type):
-        match = None
         score = 0
-
-        if self.voc_match(phrase,
-                          "video") or media_type == CPSMatchType.VIDEO:
-            score += 0.05
-            match = CPSMatchLevel.GENERIC
-
+        if self.voc_match(phrase, "video") or media_type == CPSMatchType.VIDEO:
+            score += 5
         if self.voc_match(phrase, "classic"):
-            score += 0.1
-            match = CPSMatchLevel.CATEGORY
-
-        if self.voc_match(phrase,
-                          "movie") or media_type == CPSMatchType.MOVIE:
-            score += 0.1
-            match = CPSMatchLevel.CATEGORY
-
+            score += 10
+        if self.voc_match(phrase, "movie") or media_type == CPSMatchType.MOVIE:
+            score += 10
         if self.voc_match(phrase, "ccc"):
-            score += 0.3
-            match = CPSMatchLevel.TITLE
-
-        return match, score
+            score += 30
+        return score
 
     def normalize_title(self, title):
         title = title.lower().strip()
@@ -66,19 +54,7 @@ class CultCinemaClassicsSkill(MediaCollectionSkill):
         title = title.replace("|", "").replace('"', "") \
             .replace(':', "").replace('”', "").replace('“', "") \
             .strip()
-        return " ".join([w for w in title.split(" ") if w])  # remove extra
-        # spaces
-
-    def calc_final_score(self, phrase, base_score, match_level):
-        # calc final confidence
-        score = base_score
-        if self.voc_match(phrase, "ccc"):
-            score += 0.15
-        if self.voc_match(phrase, "movie"):
-            score += 0.05  # bonus for films
-        if self.voc_match(phrase, "classic"):
-            score += 0.05  # bonus for classic films
-        return score
+        return " ".join([w for w in title.split(" ") if w])  # remove extra spaces
 
 
 def create_skill():
