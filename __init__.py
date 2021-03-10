@@ -23,6 +23,8 @@ class CultCinemaClassicsSkill(VideoCollectionSkill):
         self.skill_logo = join(dirname(__file__), "ui", "ccc_icon.jpg")
         self.skill_icon = join(dirname(__file__), "ui", "ccc_icon.jpg")
         self.default_bg = join(dirname(__file__), "ui", "ccc_logo.png")
+        self.playback_type = CPSPlayback.GUI
+        self.media_type = CPSMatchType.MOVIE
 
     # voice interaction
     def get_intro_message(self):
@@ -51,6 +53,7 @@ class CultCinemaClassicsSkill(VideoCollectionSkill):
         title = self.remove_voc(title, "movie")
         title = self.remove_voc(title, "video")
         title = self.remove_voc(title, "classic")
+        title = self.remove_voc(title, "horror")
         title = title.replace("|", "").replace('"', "") \
             .replace(':', "").replace('”', "").replace('“', "") \
             .strip()
