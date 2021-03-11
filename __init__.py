@@ -44,7 +44,7 @@ class CultCinemaClassicsSkill(VideoCollectionSkill):
         if self.voc_match(phrase, "movie") or media_type == CPSMatchType.MOVIE:
             score += 10
         if self.voc_match(phrase, "ccc"):
-            score += 30
+            score += 50
         return score
 
     def normalize_title(self, title):
