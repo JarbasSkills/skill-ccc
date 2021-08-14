@@ -24,7 +24,7 @@ class CultCinemaClassicsSkill(VideoCollectionSkill):
         self.skill_logo = join(dirname(__file__), "ui", "ccc_icon.jpg")
         self.skill_icon = join(dirname(__file__), "ui", "ccc_icon.jpg")
         self.default_bg = join(dirname(__file__), "ui", "ccc_logo.png")
-        self.playback_type = CommonPlayPlaybackType.GUI
+        self.playback_type = CommonPlayPlaybackType.VIDEO
         self.media_type = CommonPlayMediaType.MOVIE
 
     # voice interaction
