@@ -10,10 +10,8 @@ class CultCinemaClassicsSkill(VideoCollectionSkill):
 
     def __init__(self):
         super().__init__("CultCinemaClassics")
-        self.supported_media = [CommonPlayMediaType.GENERIC,
-                                CommonPlayMediaType.MOVIE,
-                                CommonPlayMediaType.TRAILER,
-                                CommonPlayMediaType.VIDEO]
+        self.supported_media = [CommonPlayMediaType.MOVIE,
+                                CommonPlayMediaType.TRAILER]
         path = join(dirname(__file__), "res", "CultCinemaClassics.jsondb")
         logo = join(dirname(__file__), "res", "ccc_logo.png")
         # load video catalog
