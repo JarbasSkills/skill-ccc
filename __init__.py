@@ -1,9 +1,9 @@
+from os.path import join, dirname
+
 from mycroft.skills.core import intent_file_handler
-from pyvod import Collection, Media
-from os.path import join, dirname, basename
-from ovos_plugin_common_play.ocp import MediaType, PlaybackType, \
-    MatchConfidence
+from ovos_plugin_common_play.ocp import MediaType, PlaybackType
 from ovos_workshop.skills.video_collection import VideoCollectionSkill
+from pyvod import Collection
 
 
 class CultCinemaClassicsSkill(VideoCollectionSkill):
@@ -56,7 +56,8 @@ class CultCinemaClassicsSkill(VideoCollectionSkill):
         title = title.replace("|", "").replace('"', "") \
             .replace(':', "").replace('”', "").replace('“', "") \
             .strip()
-        return " ".join([w for w in title.split(" ") if w])  # remove extra spaces
+        return " ".join(
+            [w for w in title.split(" ") if w])  # remove extra spaces
 
 
 def create_skill():
