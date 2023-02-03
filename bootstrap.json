@@ -34987,5 +34987,19 @@
             "classic movie"
         ],
         "thumbnail": "https://i.ytimg.com/vi/ryGYqxYOe9Q/sddefault.jpg?v=63c6675f"
+    },
+    "https://youtube.com/watch?v=G7qeKXsufOw": {
+        "author": "Cult Cinema Classics",
+        "title": "TARZAN CALLS AGAIN... and new thrills sweep the jungle wilds! | Colorized Adventure Movie",
+        "url": "https://youtube.com/watch?v=G7qeKXsufOw",
+        "duration": 4171,
+        "upload_ts": 1675382400.0,
+        "tags": [
+            "movie",
+            "film",
+            "cinema",
+            "classics"
+        ],
+        "thumbnail": "https://i.ytimg.com/vi/G7qeKXsufOw/sddefault.jpg"
     }
 }
