@@ -35311,5 +35311,30 @@
             "hollywood movie"
         ],
         "thumbnail": "https://i.ytimg.com/vi/IjL1yJOuUIE/sddefault.jpg?v=639326fb"
+    },
+    "https://youtube.com/watch?v=QTQub31Dt8Y": {
+        "author": "Cult Cinema Classics",
+        "title": "The Wild Eye / L'Occhio selvaggio (1960) Adventure | Full Movie | Subtitled",
+        "url": "https://youtube.com/watch?v=QTQub31Dt8Y",
+        "duration": 5835,
+        "upload_ts": 1675987200.0,
+        "tags": [
+            "movie",
+            "film",
+            "cinema",
+            "classics",
+            "full movie",
+            "full movies",
+            "b movies",
+            "the wild eye",
+            "psychotronic film",
+            "film maker",
+            "documentary",
+            "italian film",
+            "italian movie",
+            "Wild Eye",
+            "L'occhio selvaggio"
+        ],
+        "thumbnail": "https://i.ytimg.com/vi/QTQub31Dt8Y/sddefault.jpg?v=63da8107"
     }
 }
