@@ -35589,5 +35589,24 @@
             "western movie"
         ],
         "thumbnail": "https://i.ytimg.com/vi/Guijdec_O80/sddefault.jpg"
+    },
+    "https://youtube.com/watch?v=4cS-C9uufms": {
+        "author": "Cult Cinema Classics",
+        "title": "Un poliziotto scomodo (1978) Poliziesco | Film Completo | Audio e sottotitoli in italiano",
+        "url": "https://youtube.com/watch?v=4cS-C9uufms",
+        "duration": 5776,
+        "upload_ts": 1676505600.0,
+        "tags": [
+            "cinema",
+            "classics",
+            "movies",
+            "old movies",
+            "public domain",
+            "films",
+            "B movies",
+            "classic film",
+            "cult film"
+        ],
+        "thumbnail": "https://i.ytimg.com/vi/4cS-C9uufms/sddefault.jpg?v=63ce2b02"
     }
 }
