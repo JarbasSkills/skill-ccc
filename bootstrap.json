@@ -35669,5 +35669,27 @@
             "cowboy movie"
         ],
         "thumbnail": "https://i.ytimg.com/vi/8l2zDOn4798/sddefault.jpg?v=63c55b07"
+    },
+    "https://youtube.com/watch?v=783JYzJmqS0": {
+        "author": "Cult Cinema Classics",
+        "title": "Sergeant Ryker (Lee Marvin, 1968) War | Full Movie | Original version with subtitles",
+        "url": "https://youtube.com/watch?v=783JYzJmqS0",
+        "duration": 5145,
+        "upload_ts": 1676678400.0,
+        "tags": [
+            "movie",
+            "classics",
+            "full movie",
+            "drama",
+            "war",
+            "korean war",
+            "chinese army",
+            "spy movie",
+            "counter intelligence",
+            "u.s. army",
+            "war movie",
+            "Lee Marvin"
+        ],
+        "thumbnail": "https://i.ytimg.com/vi/783JYzJmqS0/sddefault.jpg?v=63d01a90"
     }
 }
