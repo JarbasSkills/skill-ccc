@@ -38348,5 +38348,24 @@
             "yt:cc=on"
         ],
         "thumbnail": "https://i.ytimg.com/vi/tWMCxTzDjt8/sddefault.jpg?v=64182ab5"
+    },
+    "https://youtube.com/watch?v=PUi6RPZv7hw": {
+        "author": "Cult Cinema Classics",
+        "title": "Metal Skin Panic MADOX- 01 (1987) | Japanese Animation | Sci-Fi | Subtitled",
+        "url": "https://youtube.com/watch?v=PUi6RPZv7hw",
+        "duration": 2472,
+        "upload_ts": 1681171200.0,
+        "tags": [
+            "cartoon",
+            "manga",
+            "japan",
+            "anime",
+            "animation",
+            "nime animation",
+            "japanese cyberpunk",
+            "madox 01",
+            "metal skin panic madox-01"
+        ],
+        "thumbnail": "https://i.ytimg.com/vi/PUi6RPZv7hw/sddefault.jpg?v=64214b27"
     }
 }
