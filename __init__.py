@@ -11,8 +11,7 @@ from ovos_workshop.skills.common_play import OVOSCommonPlaybackSkill
 
 class CultCinemaClassicsSkill(OVOSCommonPlaybackSkill):
     def __init__(self, *args, **kwargs):
-        self.supported_media = [MediaType.MOVIE,
-                                MediaType.GENERIC]
+        self.supported_media = [MediaType.MOVIE]
         self.skill_icon = join(dirname(__file__), "ui", "ccc_icon.jpg")
         self.default_bg = join(dirname(__file__), "ui", "ccc_logo.png")
         self.archive = JsonStorageXDG("CultCinemaClassics", subfolder="OCP")
@@ -151,25 +150,24 @@ class CultCinemaClassicsSkill(OVOSCommonPlaybackSkill):
             candidates = [video for video in self.archive.values()
                           if video["url"] not in self.media_type_exceptions]
 
+        # only search db if user explicitly requested a known movie
         if title:
-            # only search db if user explicitly requested a known movie
-            if title:
-                candidates = [video for video in candidates
-                              if title.lower() in video["title"].lower()]
+            candidates = [video for video in candidates
+                          if title.lower() in video["title"].lower()]
 
-                for video in candidates:
-                    yield {
-                        "title": video["title"],
-                        "artist": video["author"],
-                        "match_confidence": min(100, base_score),
-                        "media_type": self.media_type_exceptions.get(video["url"], MediaType.MOVIE),
-                        "uri": "youtube//" + video["url"],
-                        "playback": PlaybackType.VIDEO,
-                        "skill_icon": self.skill_icon,
-                        "skill_id": self.skill_id,
-                        "image": video["thumbnail"],
-                        "bg_image": video["thumbnail"],
-                    }
+            for video in candidates:
+                yield {
+                    "title": video["title"],
+                    "artist": video["author"],
+                    "match_confidence": min(100, base_score),
+                    "media_type": self.media_type_exceptions.get(video["url"], MediaType.MOVIE),
+                    "uri": "youtube//" + video["url"],
+                    "playback": PlaybackType.VIDEO,
+                    "skill_icon": self.skill_icon,
+                    "skill_id": self.skill_id,
+                    "image": video["thumbnail"],
+                    "bg_image": video["thumbnail"],
+                }
 
     @ocp_featured_media()
     def featured_media(self):
